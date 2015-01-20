@@ -27,11 +27,10 @@
 <body>
 <h1>Asyncronous Javascript And XML (AJAX)</h1>
 <script>
-    $.ajax({
-        url:"test.html"
-    }).done(function(data) {
-        $("h1").append(data);
-    });
+    var regex=/great/i; //var regex=/e/g;
+    var string="Regex is Great!";
+    var result = string.match(regex);
+    alert(result);
 </script>
 
 </body>

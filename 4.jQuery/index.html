@@ -7,7 +7,6 @@
 
     <title>Learning jQuery</title>
     <!--<script type="text/javascript" src="jquery-1.11.2.min.js"></script>-->
-
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
@@ -28,17 +27,42 @@
 
 </head>
 <body>
-    <div id="square"></div>
-    <div id="target"></div>
-
+<div id="accordian">
+    <h3>Title</h3>
+    <div>
+        <p>This is some text. This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</p>
+    </div>
+    <h3>Title</h3>
+    <div>
+        <p>This is some text. This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</p>
+    </div>
+    <h3>Title</h3>
+    <div>
+        <p>This is some text. This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</p>
+    </div>
+    <h3>Title</h3>
+    <div>
+        <p>This is some text. This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</p>
+    </div>
+    <h3>Title</h3>
+    <div>
+        <p>This is some text. This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</p>
+    </div>
+    <h3>Title</h3>
+    <div>
+        <p>This is some text. This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</p>
+    </div>
+    <h3>Title</h3>
+    <div>
+        <p>This is some text. This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</p>
+    </div>
+    <h3>Title</h3>
+    <div>
+        <p>This is some text. This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</p>
+    </div>
+</div>
 <script>
-    $("#square").draggable();
-    $("#target").droppable({
-        drop:function(ui, event){
-            $("#target").css("background-color","red");
-        }
-    });
-
+    $("#accordian").accordion();
 </script>
 
 </body>

@@ -26,13 +26,17 @@
 </head>
 <body>
 
-    <div id="circle"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-
+    <p>This is a paragraph of text</p>
+    <button id="fadder">Fade Out</button>
+    <button id="fadderIn">Fade In</button>
 <script>
-    $("div").click(function(){
-        $(this).fadeOut();
+    $("#fadder").click(function(){
+        $("p").fadeOut("slow",function(){
+            alert("fade Out complete!");
+        });
+    });
+    $("#fadderIn").click(function(){
+        $("p").fadeIn();
     });
 </script>
 

@@ -8,34 +8,67 @@
     <title>Learning jQuery</title>
     <!--<script type="text/javascript" src="jquery-1.11.2.min.js"></script>-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <style>
-        #square {
-            width: 200px;
-            height: 200px;
-            background-color: grey;
-        }
-        #target {
-            width: 300px;
-            height: 300px;
-            background-color: yellow;
-        }
-    </style>
-
+    <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 
 </head>
 <body>
-    <ul>
-        <li>Pizza</li>
-        <li>Cheese</li>
-        <li>Tomatoes</li>
-        <li>Chocolate</li>
-    </ul>
-<script>
-    $("ul").sortable();
-</script>
+    <div id="wrapper">
+        <div id="menuBar">
+            <div id="logo">
+                WEB-BIN
+            </div>
+            <div id="buttonDiv">
+                <button id="runButton">Run</button>
+            </div>
+            <ul id="toggles">
+                <li class="toggle selected">HTML</li>
+                <li class="toggle">CSS</li>
+                <li class="toggle">JS</li>
+                <li class="toggle selected" style="border: none">Result</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="codeContainer" id="HTMLContainer">
+            <div class="codeLabel">HTML</div>
+            <textarea id="htmlCode">Example Code</textarea>
+        </div>
+        <div class="codeContainer" id="CSSContainer">
+            <div class="codeLabel">CSS</div>
+            <textarea id="cssCode">Example Code</textarea>
+        </div>
+        <div class="codeContainer" id="JSContainer">
+            <div class="codeLabel">JS</div>
+            <textarea id="jsCode">Example Code</textarea>
+        </div>
+        <div class="codeContainer" id="ResultContainer">
+            <div class="codeLabel">Result</div>
+            <iframe id="resultFrame"></iframe>
+        </div>
+    </div>
 
+    <script>
+        var windowHeight=$(window).height();
+        var menuBarHeight=$("#menuBar").height();
+        var codeContainerHeight = windowHeight-menuBarHeight;
+        $(".codeContainer").height(codeContainerHeight+"px");
+        $(".toggle").click(function(){
+            $(this).toggleClass("selected");
+            var activeDiv=$(this).html();
+            $("#"+activeDiv+"Container").toggle();
+
+            var showingDivs=$(".codeContainer").filter(function(){
+               return ($(this).css("display")!="none");
+            }).length;
+            var width=100/showingDivs;
+            $(".codeContainer").css("width",width+"%");
+        });
+        $("#runButton").click(function() {
+            $("iframe").contents().find("html").html('<style>'+$("#cssCode").val()+'</style>' + $("#htmlCode").val());
+            document.getElementById("resultFrame").contentWindow.eval($("#jsCode").val());
+        });
+    </script>
 </body>
 </html>

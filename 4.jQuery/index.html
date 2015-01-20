@@ -7,23 +7,36 @@
 
     <title>Learning jQuery</title>
     <!--<script type="text/javascript" src="jquery-1.11.2.min.js"></script>-->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <style>
-        #square {
-            height:200px;
-            width:200px;
-            background-color: grey;
+        #dragable {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        #resizeable {
+            width: 200px;
+            height: 200px;
+            background-color: red;
         }
     </style>
 
 
+
 </head>
 <body>
-    <div id="square"></div>
+    <div id="dragable">
+        Drag Me Around!
+    </div>
+    <div id="resizeable">
+        Resize Me!
+    </div>
 <script>
-    $("#square").draggable();
+    $("#dragable").draggable();
+    $("#resizeable").resizable();
 
 </script>
 
